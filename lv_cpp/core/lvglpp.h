@@ -12,7 +12,7 @@
 #include <unistd.h>
 #endif
 
-#include <lvgl/lvgl.h>
+#include "../../lvgl/lvgl.h"
 
 #include <memory>
 #include <vector>

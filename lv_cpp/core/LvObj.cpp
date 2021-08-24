@@ -171,7 +171,7 @@ LvObj& LvObj::classInitObj() {
 	return *this;
 }
 LvObj& LvObj::destructor() {
-	_lv_obj_destructor(cObj.get());
+	_lv_obj_destruct(cObj.get());
 	return *this;
 }
 bool LvObj::isEditable() {

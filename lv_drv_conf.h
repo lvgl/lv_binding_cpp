@@ -12,7 +12,7 @@
 #ifndef LV_DRV_CONF_H
 #define LV_DRV_CONF_H
 
-#include "lv_conf.h"
+#include <lv_conf.h>
 
 /*********************
  * DELAY INTERFACE

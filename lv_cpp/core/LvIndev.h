@@ -8,8 +8,8 @@
 #ifndef LVINPUT_H_
 #define LVINPUT_H_
 
+#include <lv_drv_conf.h>
 #include "lvglpp.h"
-#include "lv_drv_conf.h"
 #include "../widgets/LvImg.h"
 
 namespace lvglpp {

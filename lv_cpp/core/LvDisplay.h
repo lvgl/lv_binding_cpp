@@ -8,8 +8,8 @@
 #ifndef LVDISPLAY_H_
 #define LVDISPLAY_H_
 
+#include <lv_drv_conf.h>
 #include "lvglpp.h"
-#include "lv_drv_conf.h"
 
 #ifndef LV_DISP_BUFFER_STATIC
 #define LV_DISP_BUFFER_STATIC 1

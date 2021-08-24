@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_subdirectory(lvgl)
 add_subdirectory(lv_drivers)
 
-file(GLOB_RECURSE SOURCES ./*.cpp)
+file(GLOB_RECURSE SOURCES ./lv_cpp/*.cpp)
 add_library(lv_binding_cpp STATIC ${SOURCES})
 
 target_include_directories (lvgl PUBLIC ${CMAKE_SOURCE_DIR})

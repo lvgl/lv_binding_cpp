@@ -1,14 +1,13 @@
 /*
  * LvThreads.h
  *
- *  Created on: Dec 16, 2019
  *      Author: fstuff
  */
 
-
-#ifdef __linux__
 #ifndef LVTHREADS_H_
 #define LVTHREADS_H_
+
+#if defined(_GLIBCXX_HAS_GTHREADS)
 
 #include <thread>
 #include <atomic>
@@ -17,7 +16,9 @@
 #include <list>
 #include <memory>
 
-using namespace std;
+#else
+#include "os/os.h"
+#endif
 
 #include "lvglpp.h"
 
@@ -27,9 +28,15 @@ class LvThread {
 
 protected:
 
+#if !defined(_GLIBCXX_HAS_GTHREADS)
+	osThreadInfo_t tInfo;
+	os_bool stop_thread;
+    os_bool pause_thread;
+#else
     std::unique_ptr<std::thread> the_thread_p;
     std::atomic_bool stop_thread;
     std::atomic_bool pause_thread;
+#endif
 
     /* Thread Core */
     virtual int Init();
@@ -39,6 +46,10 @@ protected:
 public:
 
     LvThread();
+#if !defined(_GLIBCXX_HAS_GTHREADS)
+    LvThread(const char* name);
+    LvThread(const char *name, os_uint32 stackDepth, osPriority_e priority);
+#endif
     virtual ~LvThread();
 
     void Go();
@@ -53,6 +64,5 @@ public:
 
 }
 
-
 #endif /* LVTHREADS_H_ */
-#endif
+

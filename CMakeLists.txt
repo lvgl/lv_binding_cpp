@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
+
+set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+
 project(lv_binding_cpp VERSION 0.1)
 
 set(CMAKE_CXX_STANDARD 17)

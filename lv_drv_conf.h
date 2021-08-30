@@ -83,7 +83,7 @@
  *  Monitor of PC
  *-------------------*/
 #ifndef USE_MONITOR
-#  define USE_MONITOR         0
+#  define USE_MONITOR         1
 #endif
 
 #if USE_MONITOR
@@ -272,7 +272,7 @@
  *  Linux frame buffer device (/dev/fbx)
  *-----------------------------------------*/
 #ifndef USE_FBDEV
-#  define USE_FBDEV           1
+#  define USE_FBDEV           0
 #endif
 
 #if USE_FBDEV
@@ -353,7 +353,7 @@
  * Mouse or touchpad on PC (using SDL)
  *-------------------------------------*/
 #ifndef USE_MOUSE
-#  define USE_MOUSE           0
+#  define USE_MOUSE           1
 #endif
 
 #if USE_MOUSE
@@ -364,7 +364,7 @@
  *  LINUX MICE
  *--------------*/
 #ifndef USE_LINMICE
-#  define USE_LINMICE           1
+#  define USE_LINMICE           0
 #endif
 
 #if USE_LINMICE

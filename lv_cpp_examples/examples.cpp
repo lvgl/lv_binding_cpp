@@ -7,30 +7,34 @@
 
 #if defined(CONFIG_EXAMPLES)
 
+#if defined(__linux__)
+#include <unistd.h>
+#endif
+
 #include "examples.hpp"
 
 using namespace lvglpp;
 
-int main (int argc,char** argv) {
+int main(int argc, char **argv) {
+
+	unsigned int ms = 1;
+
+	lvglpp::Init();
+	lvglpp::DefaultPeripheral();
 
 #if defined(CONFIG_EXAMPLE_HELLO)
-	HelloEx App;
-#elif defined(CONFIG_EXAMPLE_EVENT)
-	EventEx App;
-#elif defined(CONFIG_EXAMPLE_CUSTOMWIDGETS)
-	CustomWidgetsEx App;
+	HelloEx::Create();
+	ms = HelloEx::ms;
 #endif
 
-	/* Start the App */
-	App.Go();
-	/* Join the App Thread */
-	App.Jo();
-
-	return 0;
+	while (1) {
+		lvglpp::Handler(ms);
+#if defined(__linux__)
+		usleep(1000 * ms);
+#endif
+	}
 
 }
 
-
 #endif
-
 

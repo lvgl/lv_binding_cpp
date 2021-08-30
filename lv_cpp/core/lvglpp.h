@@ -8,16 +8,13 @@
 #ifndef LVGLPP_H_
 #define LVGLPP_H_
 
-#ifdef __linux__
-#include <unistd.h>
-#endif
-
 #include "../../lvgl/lvgl.h"
 
 #include <memory>
+#include <functional>
 #include <vector>
-#include "LvEvent.h"
 
+#include "LvEvent.h"
 
 namespace lvglpp {
 
@@ -43,15 +40,11 @@ std::unique_ptr<Class> Make(ArgsT... args){
 	return std::make_unique<Class>(args...);
 };
 
-/* Sleep for milliseconds */
-static void LvSleep(unsigned int ms) {
-#ifdef __linux__
-	usleep(ms * 1000);
-#endif
-}
-
+/* lvgl iterface functions */
 /* Initilize the lvglpp library */
 void Init();
+void Handler(unsigned int ms);
+void DefaultPeripheral();
 
 } /* namespace lvglpp */
 

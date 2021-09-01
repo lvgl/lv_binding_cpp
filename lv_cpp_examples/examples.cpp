@@ -8,12 +8,13 @@
 #if defined(CONFIG_EXAMPLES)
 
 #if defined(__linux__)
-#include <unistd.h>
+#include <thread>
 #endif
 
 #include "examples.hpp"
 
 using namespace lvglpp;
+using namespace std;
 
 int main(int argc, char **argv) {
 
@@ -30,7 +31,7 @@ int main(int argc, char **argv) {
 	while (1) {
 		lvglpp::Handler(ms);
 #if defined(__linux__)
-		usleep(1000 * ms);
+		this_thread::sleep_for(chrono::milliseconds(ms));
 #endif
 	}
 

@@ -11,6 +11,8 @@
 #include "../lv_cpp/core/lvglpp.h"
 #include "../lv_cpp/core/LvDisplay.h"
 #include "../lv_cpp/core/LvIndev.h"
+#include "../lv_cpp/core/LvScr.h"
+
 #include "../lv_cpp/widgets/LvWidgets.h"
 
 namespace HelloEx {

@@ -46,6 +46,8 @@ void Create() {
 	btn->align(LV_ALIGN_CENTER, 0, 0);
 	label->align(LV_ALIGN_CENTER,0, 0);
 
+
+
 }
 
 }

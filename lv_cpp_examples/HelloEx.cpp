@@ -15,7 +15,6 @@ LvPointerUnique<LvBtn> btn;
 LvPointerUnique<LvStyle> btnStyle;
 LvPointerUnique<LvLabel> label;
 LvPointerUnique<LvTimer> timer;
-LvPointerUnique<LvAnim> animation;
 
 
 /* You can delare it as raw pointers */
@@ -49,14 +48,6 @@ static void TimerCb(lv_timer_t *timer) {
 }
 
 
-
-/* Callback for button pressed */
-static void AnimCb(void * var, int32_t v) {
-	LvBtn* _btn = static_cast<LvBtn*>(var);
-	_btn->setSize( v, v * 0.5);
-}
-
-
 /* Create Function */
 void Create() {
 
@@ -79,18 +70,6 @@ void Create() {
 
 	btn->addEventCb(ButtonPressedAdd, LV_EVENT_PRESSED, nullptr);
 	btn->addEventCb(ButtonPressedSub, LV_EVENT_LONG_PRESSED_REPEAT, nullptr);
-
-
-	/* Animation */
-	animation = Make<LvAnim>();
-	animation->init().
-			setVar(btn.get()).
-			setValues(0, 100).
-			setTime(1000).
-			setRepeatCount(1).
-			setPathCb(lv_anim_path_ease_in_out).
-			setExecCb(AnimCb).start();
-
 
 	/* Label */
 	label = Make<LvLabel>(btn.get()); 		// or label = new LvLabel(btn);

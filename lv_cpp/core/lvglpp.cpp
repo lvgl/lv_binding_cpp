@@ -11,8 +11,8 @@
 
 namespace lvglpp {
 
-LvPPointer<LvDisplay> Display;
-LvPPointer<LvInput> Input;
+LvPointerUnique<LvDisplay> Display;
+LvPointerUnique<LvInput> Input;
 
 /* Init lvgl */
 void Init() {

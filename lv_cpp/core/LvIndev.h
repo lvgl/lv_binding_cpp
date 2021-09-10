@@ -18,7 +18,7 @@ class LvInput {
 private:
 	lv_indev_drv_t indev_drv;
 	LvPointer<lv_indev_t,lv_mem_free> indev;
-	LvPPointer<LvImg> Cursor;
+	LvPointerUnique<LvImg> Cursor;
 public:
 	LvInput();
 	LvInput(lv_indev_drv_t *drv);

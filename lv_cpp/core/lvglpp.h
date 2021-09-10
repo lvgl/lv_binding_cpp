@@ -14,7 +14,9 @@
 #include <functional>
 #include <vector>
 
+
 #include "LvEvent.h"
+
 
 namespace lvglpp {
 
@@ -28,11 +30,11 @@ using LvPointer = std::unique_ptr<ManagedType, CustomDeleter<Functor>>;
 
 /* Used for create a smart_pointer with default deleter for cpp object */
 template <typename ManagedType>
-using LvPPointer = std::unique_ptr<ManagedType>;
+using LvPointerUnique = std::unique_ptr<ManagedType>;
 
 /* Declaring Events using smart pointers */
 template <typename Class>
-using LvEventPointer = LvPPointer<LvEventCb<Class>>;
+using LvEventPointer = LvPointerUnique<LvEventCb<Class>>;
 
 /* Variadic class contructor */
 template <typename Class,typename... ArgsT>

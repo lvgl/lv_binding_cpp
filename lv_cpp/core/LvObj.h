@@ -11,6 +11,7 @@
 #include <list>
 #include "lvglpp.h"
 #include "LvEvent.h"
+#include "../misc/LvStyle.h"
 
 
 namespace lvglpp {
@@ -33,7 +34,7 @@ public:
 	LvObj& del();
 	LvObj& clean();
 	LvObj& delAsync();
-	LvObj& setParent(lv_obj_t *parent);
+	LvObj& setParent(LvObj *parent);
 	LvObj& moveForeground();
 	LvObj& moveBackground();
 	lv_obj_t *getScreen() const noexcept ;
@@ -61,7 +62,7 @@ public:
 	bool removeEventCb(lv_event_cb_t event_cb);
 	bool removeEventDsc(struct _lv_event_dsc_t *event_dsc);
 	LvObj& classInitObj();
-	LvObj& destructor();
+	LvObj& destruct();
 	bool isEditable();
 	bool isGroupDef();
 	LvObj& addFlag(lv_obj_flag_t f);
@@ -102,6 +103,7 @@ public:
 	LvObj& updateSnap(lv_anim_enable_t anim_en);
 	LvObj& getScrollbarArea(lv_area_t *hor_area, lv_area_t *ver_area);
 	LvObj& scrollbarInvalidate();
+	LvObj& readjustScroll(lv_anim_enable_t anim_en);
 	lv_obj_t *lvIndevSearchObj(lv_point_t *point);
 	LvObj& lvGroupRemoveObj();
 	LvObj& lvGroupFocusObj();
@@ -144,8 +146,8 @@ public:
 	LvObj& setExtClickArea(lv_coord_t size);
 	LvObj& getClickArea(lv_area_t *area);
 	bool hitTest(const lv_point_t *point);
-	LvObj& addStyle(lv_style_t *style, lv_style_selector_t selector);
-	LvObj& removeStyle(lv_style_t *style, lv_style_selector_t selector);
+	LvObj& addStyle(LvStyle *style, lv_style_selector_t selector);
+	LvObj& removeStyle(LvStyle *style, lv_style_selector_t selector);
 	LvObj& refreshStyle(lv_style_selector_t selector, lv_style_prop_t prop);
 	lv_style_value_t getStyleProp(lv_part_t part, lv_style_prop_t prop) const noexcept ;
 	LvObj& setLocalStyleProp(lv_style_prop_t prop, lv_style_value_t value, lv_style_selector_t selector);

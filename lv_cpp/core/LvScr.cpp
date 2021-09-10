@@ -7,7 +7,6 @@
 
 namespace lvglpp {
 
-LvPPointer<LvScr> ActScreen;
 
 LvScr::LvScr() : LvScr(NULL) {
 }
@@ -30,15 +29,5 @@ LvScr& LvScr::LoadAnim(lv_scr_load_anim_t anim_type, uint32_t time, uint32_t del
 	return *this;
 }
 
-//LvScr& LvScr::Act() {
-//
-//	if(ActScreen.get() == nullptr)
-//		ActScreen = Make<LvScr>();
-//	ActScreen->setCObj(lv_scr_act());
-//	ActScreen->setUserData(ActScreen.get());
-//
-//	return *ActScreen.get();
-//
-//}
 
 } /* namespace lvglpp */

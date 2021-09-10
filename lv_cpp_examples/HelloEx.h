@@ -14,6 +14,7 @@
 #include "../lv_cpp/core/LvScr.h"
 #include "../lv_cpp/misc/LvStyle.h"
 #include "../lv_cpp/misc/LvTimer.h"
+#include "../lv_cpp/misc/LvAnim.h"
 
 #include "../lv_cpp/widgets/LvWidgets.h"
 

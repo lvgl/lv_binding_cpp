@@ -42,7 +42,7 @@ void ButtonPressedSub(lv_event_t *e) {
 }
 
 
-/* Callback for button pressed */
+/* Callback for Timer pressed */
 static void TimerCb(lv_timer_t *timer) {
 	pressed++;
 	label->setTextFmt("%d", pressed);
@@ -50,7 +50,7 @@ static void TimerCb(lv_timer_t *timer) {
 
 
 
-/* Callback for button pressed */
+/* Callback for Animation pressed */
 static void AnimCb(void * var, int32_t v) {
 	LvBtn* _btn = static_cast<LvBtn*>(var);
 	_btn->setSize( v, v * 0.5);

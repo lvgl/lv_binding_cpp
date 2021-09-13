@@ -382,7 +382,7 @@ LvStyle& LvStyle::setLineDashGap(lv_coord_t value){
 	lv_style_set_line_dash_gap(cObj.get(),value);
 	return *this;
 }
-LvStyle& LvStyle::setLineRounded(lv_coord_t value){
+LvStyle& LvStyle::setLineRounded(bool value){
 	lv_style_set_line_rounded(cObj.get(),value);
 	return *this;
 }
@@ -402,7 +402,7 @@ LvStyle& LvStyle::setArcWidth(lv_coord_t value){
 	lv_style_set_arc_width(cObj.get(),value);
 	return *this;
 }
-LvStyle& LvStyle::setArcRounded(lv_coord_t value){
+LvStyle& LvStyle::setArcRounded(bool value){
 	lv_style_set_arc_rounded(cObj.get(),value);
 	return *this;
 }

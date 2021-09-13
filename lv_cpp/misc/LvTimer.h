@@ -3,10 +3,11 @@
  *
  */
 
-#ifndef LVtimer_H_
-#define LVtimer_H_
+#ifndef LVTIMER_H_
+#define LVTIMER_H_
 
 #include "../core/lvglpp.h"
+
 
 namespace lvglpp {
 
@@ -31,4 +32,4 @@ public:
 
 } /* namespace lvglpp */
 
-#endif /* LVtimer_H_ */
+#endif /* LVTIMER_H_ */

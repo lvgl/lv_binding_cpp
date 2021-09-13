@@ -3,10 +3,11 @@
  *
  */
 
-#ifndef LVanim_H_
-#define LVanim_H_
+#ifndef LVANIM_H_
+#define LVANIM_H_
 
 #include "../core/lvglpp.h"
+
 
 namespace lvglpp {
 
@@ -33,7 +34,9 @@ public:
 	LvAnim& setRepeatCount(uint16_t cnt);
 	LvAnim& setRepeatDelay(uint32_t delay);
 	LvAnim& setEarlyApply(bool en);
+	LvAnim& setUserData(void *user_data);
 	uint32_t getDelay() const noexcept ;
+	void *getUserData() const noexcept ;
 	bool customDel(lv_anim_custom_exec_cb_t exec_cb);
 	LvAnim& init();
 	lv_anim_t *start();
@@ -48,4 +51,4 @@ public:
 
 } /* namespace lvglpp */
 
-#endif /* LVanim_H_ */
+#endif /* LVANIM_H_ */

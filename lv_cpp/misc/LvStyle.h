@@ -3,10 +3,11 @@
  *
  */
 
-#ifndef LVstyle_H_
-#define LVstyle_H_
+#ifndef LVSTYLE_H_
+#define LVSTYLE_H_
 
 #include "../core/lvglpp.h"
+
 
 namespace lvglpp {
 
@@ -109,12 +110,12 @@ public:
 	LvStyle& setLineWidth(lv_coord_t value);
 	LvStyle& setLineDashWidth(lv_coord_t value);
 	LvStyle& setLineDashGap(lv_coord_t value);
-	LvStyle& setLineRounded(lv_coord_t value);
+	LvStyle& setLineRounded(bool value);
 	LvStyle& setLineColor(lv_color_t value);
 	LvStyle& setLineColorFiltered(lv_color_t value);
 	LvStyle& setLineOpa(lv_opa_t value);
 	LvStyle& setArcWidth(lv_coord_t value);
-	LvStyle& setArcRounded(lv_coord_t value);
+	LvStyle& setArcRounded(bool value);
 	LvStyle& setArcColor(lv_color_t value);
 	LvStyle& setArcColorFiltered(lv_color_t value);
 	LvStyle& setArcOpa(lv_opa_t value);
@@ -123,4 +124,4 @@ public:
 
 } /* namespace lvglpp */
 
-#endif /* LVstyle_H_ */
+#endif /* LVSTYLE_H_ */

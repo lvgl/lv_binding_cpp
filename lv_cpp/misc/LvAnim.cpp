@@ -9,7 +9,7 @@ namespace lvglpp {
 
 LvAnim::LvAnim() {
 	cObj.reset((lv_anim_t*)lv_mem_alloc(sizeof(lv_anim_t)));
-	
+	init();
 }
 
 LvAnim::~LvAnim() {
@@ -78,8 +78,16 @@ LvAnim& LvAnim::setEarlyApply(bool en){
 	lv_anim_set_early_apply(cObj.get(),en);
 	return *this;
 }
+LvAnim& LvAnim::setUserData(void *user_data){
+	lv_anim_set_user_data(cObj.get(),user_data);
+	return *this;
+}
 uint32_t LvAnim::getDelay() const noexcept {
 	return lv_anim_get_delay(cObj.get());
+	
+}
+void *LvAnim::getUserData() const noexcept {
+	return lv_anim_get_user_data(cObj.get());
 	
 }
 bool LvAnim::customDel(lv_anim_custom_exec_cb_t exec_cb){

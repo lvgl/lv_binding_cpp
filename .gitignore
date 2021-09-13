@@ -55,3 +55,8 @@ dkms.conf
 .project
 
 build/
+
+#lvgl configuration
+lv_conf.h
+lv_drv_conf.h
+

@@ -15,7 +15,9 @@ LvPointerUnique<LvBtn> btn;
 LvPointerUnique<LvStyle> btnStyle;
 LvPointerUnique<LvLabel> label;
 LvPointerUnique<LvTimer> timer;
-LvPointerUnique<LvAnim> animation;
+LvPointerUnique<LvAnim> zoomin;
+LvPointerUnique<LvAnim> getout;
+LvPointerUnique<LvAnimTimeline> timeline;
 
 
 /* You can delare it as raw pointers */
@@ -51,9 +53,15 @@ static void TimerCb(lv_timer_t *timer) {
 
 
 /* Callback for Animation pressed */
-static void AnimCb(void * var, int32_t v) {
+static void zoominCb(void * var, int32_t v) {
 	LvBtn* _btn = static_cast<LvBtn*>(var);
 	_btn->setSize( v, v * 0.5);
+}
+
+/* Callback for Animation pressed */
+static void getoutCb(void * var, int32_t v) {
+	LvBtn* _btn = static_cast<LvBtn*>(var);
+	_btn->setX(v);
 }
 
 
@@ -82,14 +90,29 @@ void Create() {
 
 
 	/* Animation */
-	animation = Make<LvAnim>();
-	animation->init().
+	zoomin = Make<LvAnim>();
+	zoomin->
 			setVar(btn.get()).
 			setValues(0, 100).
 			setTime(1000).
 			setRepeatCount(1).
 			setPathCb(lv_anim_path_ease_in_out).
-			setExecCb(AnimCb).start();
+			setExecCb(zoominCb);
+
+	getout = Make<LvAnim>();
+	getout->
+			setVar(btn.get()).
+			setValues(0, 500).
+			setTime(1000).
+			setRepeatCount(1).
+			setPathCb(lv_anim_path_ease_in_out).
+			setExecCb(getoutCb);
+
+	/* Make a complex animation with timeline */
+	timeline = Make<LvAnimTimeline>();
+	timeline->add(0, zoomin.get()).
+			add(1100,getout.get()).start();
+
 
 
 	/* Label */

@@ -13,4 +13,8 @@
 #include "HelloEx.h"
 #endif
 
+#if defined(CONFIG_EXAMPLE_FLEX)
+#include "FlexEx.h"
+#endif
+
 #endif /* EXAMPLE_HPP_ */

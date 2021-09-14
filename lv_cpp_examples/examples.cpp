@@ -28,6 +28,11 @@ int main(int argc, char **argv) {
 	ms = HelloEx::ms;
 #endif
 
+#if defined(CONFIG_EXAMPLE_FLEX)
+	FlexEx::Create();
+	ms = FlexEx::ms;
+#endif
+
 	while (1) {
 		lvglpp::Handler(ms);
 #if defined(__linux__)

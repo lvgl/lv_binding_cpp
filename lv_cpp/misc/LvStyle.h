@@ -120,6 +120,21 @@ public:
 	LvStyle& setArcColorFiltered(lv_color_t value);
 	LvStyle& setArcOpa(lv_opa_t value);
 	LvStyle& setArcImgSrc(const void *value);
+	LvStyle& setFlexFlow(lv_flex_flow_t value);
+	LvStyle& setFlexMainPlace(lv_flex_align_t value);
+	LvStyle& setFlexCrossPlace(lv_flex_align_t value);
+	LvStyle& setFlexTrackPlace(lv_flex_align_t value);
+	LvStyle& setFlexGrow(uint8_t value);
+	LvStyle& setGridRowDscArray(const lv_coord_t value[]);
+	LvStyle& setGridColumnDscArray(const lv_coord_t value[]);
+	LvStyle& setGridRowAlign(lv_grid_align_t value);
+	LvStyle& setGridColumnAlign(lv_grid_align_t value);
+	LvStyle& setGridCellColumnPos(lv_coord_t value);
+	LvStyle& setGridCellColumnSpan(lv_coord_t value);
+	LvStyle& setGridCellRowPos(lv_coord_t value);
+	LvStyle& setGridCellRowSpan(lv_coord_t value);
+	LvStyle& setGridCellXAlign(lv_coord_t value);
+	LvStyle& setGridCellYAlign(lv_coord_t value);
 };
 
 } /* namespace lvglpp */

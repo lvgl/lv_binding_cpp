@@ -422,5 +422,65 @@ LvStyle& LvStyle::setArcImgSrc(const void *value){
 	lv_style_set_arc_img_src(cObj.get(),value);
 	return *this;
 }
+LvStyle& LvStyle::setFlexFlow(lv_flex_flow_t value){
+	lv_style_set_flex_flow(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setFlexMainPlace(lv_flex_align_t value){
+	lv_style_set_flex_main_place(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setFlexCrossPlace(lv_flex_align_t value){
+	lv_style_set_flex_cross_place(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setFlexTrackPlace(lv_flex_align_t value){
+	lv_style_set_flex_track_place(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setFlexGrow(uint8_t value){
+	lv_style_set_flex_grow(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridRowDscArray(const lv_coord_t value[]){
+	lv_style_set_grid_row_dsc_array(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridColumnDscArray(const lv_coord_t value[]){
+	lv_style_set_grid_column_dsc_array(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridRowAlign(lv_grid_align_t value){
+	lv_style_set_grid_row_align(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridColumnAlign(lv_grid_align_t value){
+	lv_style_set_grid_column_align(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridCellColumnPos(lv_coord_t value){
+	lv_style_set_grid_cell_column_pos(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridCellColumnSpan(lv_coord_t value){
+	lv_style_set_grid_cell_column_span(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridCellRowPos(lv_coord_t value){
+	lv_style_set_grid_cell_row_pos(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridCellRowSpan(lv_coord_t value){
+	lv_style_set_grid_cell_row_span(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridCellXAlign(lv_coord_t value){
+	lv_style_set_grid_cell_x_align(cObj.get(),value);
+	return *this;
+}
+LvStyle& LvStyle::setGridCellYAlign(lv_coord_t value){
+	lv_style_set_grid_cell_y_align(cObj.get(),value);
+	return *this;
+}
 
 } /* namespace lvglpp */

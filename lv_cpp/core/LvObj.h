@@ -33,16 +33,18 @@ public:
 	lv_coord_t dpx(lv_coord_t n);
 	LvObj& del();
 	LvObj& clean();
+	LvObj& delDelayed(uint32_t delay_ms);
 	LvObj& delAsync();
 	LvObj& setParent(LvObj *parent);
-	LvObj& moveForeground();
-	LvObj& moveBackground();
+	LvObj& moveToIndex(int32_t index);
 	lv_obj_t *getScreen() const noexcept ;
 	lv_disp_t *getDisp() const noexcept ;
 	lv_obj_t *getParent() const noexcept ;
 	lv_obj_t *getChild(int32_t id) const noexcept ;
 	uint32_t getChildCnt() const noexcept ;
-	uint32_t getChildId() const noexcept ;
+	uint32_t getIndex() const noexcept ;
+	LvObj& moveForeground();
+	LvObj& moveBackground();
 	lv_flex_flow_t getStyleFlexFlow(uint32_t part) const noexcept ;
 	lv_flex_align_t getStyleFlexMainPlace(uint32_t part) const noexcept ;
 	lv_flex_align_t getStyleFlexCrossPlace(uint32_t part) const noexcept ;
@@ -58,8 +60,10 @@ public:
 	lv_coord_t getStyleGridCellRowSpan(uint32_t part) const noexcept ;
 	lv_coord_t getStyleGridCellXAlign(uint32_t part) const noexcept ;
 	lv_coord_t getStyleGridCellYAlign(uint32_t part) const noexcept ;
+	lv_theme_t *getTheme() const noexcept;
 	struct _lv_event_dsc_t *addEventCb(lv_event_cb_t event_cb, lv_event_code_t filter, void *user_data);
 	bool removeEventCb(lv_event_cb_t event_cb);
+	bool removeEventCbWithUserData(lv_event_cb_t event_cb, const void *user_data);
 	bool removeEventDsc(struct _lv_event_dsc_t *event_dsc);
 	LvObj& classInitObj();
 	LvObj& destruct();
@@ -165,6 +169,27 @@ public:
 	lv_coord_t calculateExtDrawSize(uint32_t part);
 	LvObj& refreshExtDrawSize();
 	lv_coord_t getExtDrawSize() const noexcept ;
+	LvObj& setFlexFlow(lv_flex_flow_t flow);
+	LvObj& setFlexAlign(lv_flex_align_t main_place, lv_flex_align_t cross_place, lv_flex_align_t track_place);
+	LvObj& setFlexGrow(uint8_t grow);
+	LvObj& setStyleFlexFlow(lv_flex_flow_t value, lv_style_selector_t selector);
+	LvObj& setStyleFlexMainPlace(lv_flex_align_t value, lv_style_selector_t selector);
+	LvObj& setStyleFlexCrossPlace(lv_flex_align_t value, lv_style_selector_t selector);
+	LvObj& setStyleFlexTrackPlace(lv_flex_align_t value, lv_style_selector_t selector);
+	LvObj& setStyleFlexGrow(uint8_t value, lv_style_selector_t selector);
+	LvObj& setGridDscArray(const lv_coord_t col_dsc[], const lv_coord_t row_dsc[]);
+	LvObj& setGridAlign(lv_grid_align_t column_align, lv_grid_align_t row_align);
+	LvObj& setGridCell(lv_grid_align_t x_align, uint8_t col_pos, uint8_t col_span, lv_grid_align_t y_align, uint8_t row_pos, uint8_t row_span);
+	LvObj& setStyleGridRowDscArray(const lv_coord_t value[], lv_style_selector_t selector);
+	LvObj& setStyleGridColumnDscArray(const lv_coord_t value[], lv_style_selector_t selector);
+	LvObj& setStyleGridRowAlign(lv_grid_align_t value, lv_style_selector_t selector);
+	LvObj& setStyleGridColumnAlign(lv_grid_align_t value, lv_style_selector_t selector);
+	LvObj& setStyleGridCellColumnPos(lv_coord_t value, lv_style_selector_t selector);
+	LvObj& setStyleGridCellColumnSpan(lv_coord_t value, lv_style_selector_t selector);
+	LvObj& setStyleGridCellRowPos(lv_coord_t value, lv_style_selector_t selector);
+	LvObj& setStyleGridCellRowSpan(lv_coord_t value, lv_style_selector_t selector);
+	LvObj& setStyleGridCellXAlign(lv_coord_t value, lv_style_selector_t selector);
+	LvObj& setStyleGridCellYAlign(lv_coord_t value, lv_style_selector_t selector);
 
 	/* Cpp Event Management*/
 	typedef struct {
